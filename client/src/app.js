@@ -228,6 +228,11 @@ renderMarkers();
 //     iconSrc: "/icons/wheelchair.png",
 //     alt: "This eatery is wheelchair accessible",
 //   },
+//   {
+//     iconName: "Hidden disability friendly",
+//     iconSrc: "/icons/sunflower.png",
+//     alt: "This eatery is known by the hidden disability sunflower",
+//   },
 // ];
 
 function createMapMarkers(data, map) {
