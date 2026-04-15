@@ -23,7 +23,7 @@ console.log(form);
 
 async function DietReq() {
   const res = await fetch(
-    "https://diet-dine-server.onrender.com/dietary_requirements_submit" //change to render link once setup
+    "https://diet-dine-server.onrender.com/dietary_requirements_submit", //change to render link once setup
   );
   const list = await res.json();
   console.log("Dietary Requirements:", list);
@@ -97,7 +97,7 @@ searchForm.addEventListener("submit", function (event) {
 
 async function filterReq() {
   const res = await fetch(
-    "https://diet-dine-server.onrender.com/dietary_requirements_submit" //change to render link once setup
+    "https://diet-dine-server.onrender.com/dietary_requirements_submit", //change to render link once setup
   );
   const list = await res.json();
   // console.log("Dietary Requirements:", list);
@@ -134,10 +134,25 @@ const getUserLocation = (position) => {
 
 navigator.geolocation.getCurrentPosition(getUserLocation);
 
+//deprecated code -  did not adhere to openstreetmap usage policies
+//
+// function createMap(getUserLocation) {
+//   map = L.map("map").setView(getUserLocation, 13);
+//   L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+//     maxZoom: 19,
+//     attribution:
+//       '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+//   }).addTo(map);
+//   renderMarkers(map);
+// }
+
+//updated code in line with openstreetmap policy
+//
 function createMap(getUserLocation) {
   map = L.map("map").setView(getUserLocation, 13);
   L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
     maxZoom: 19,
+    referrerPolicy: "strict-origin-when-cross-origin",
     attribution:
       '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
   }).addTo(map);
@@ -160,7 +175,7 @@ function createMap(getUserLocation) {
 
 async function getRestaurantData() {
   const response = await fetch(
-    "https://diet-dine-server.onrender.com/eateries"
+    "https://diet-dine-server.onrender.com/eateries",
   );
   const restaurantData = await response.json();
   return restaurantData;
@@ -271,7 +286,7 @@ function createMapMarkers(data, map) {
     //   }
     // }
     mapMarkers.bindPopup(
-      `${data[i].name} <br>${data[i].address}<br><a href=${data[i].weblink} target="_blank">${data[i].weblink}</a><br><ul><li>Gluten free: ${data[i].gluten_free}</li><li>Dairy free: ${data[i].dairy_free}</li><li>Vegetarian: ${data[i].vegetarian}</li><li>Vegan: ${data[i].vegan}</li><li>Pescatarian: ${data[i].pescatarian}</li><li>Allergy friendly: ${data[i].allergy_friendly}</li><li>Wheelchair accessible: ${data[i].wheelchair_accessible}</li></ul>`
+      `${data[i].name} <br>${data[i].address}<br><a href=${data[i].weblink} target="_blank">${data[i].weblink}</a><br><ul><li>Gluten free: ${data[i].gluten_free}</li><li>Dairy free: ${data[i].dairy_free}</li><li>Vegetarian: ${data[i].vegetarian}</li><li>Vegan: ${data[i].vegan}</li><li>Pescatarian: ${data[i].pescatarian}</li><li>Allergy friendly: ${data[i].allergy_friendly}</li><li>Wheelchair accessible: ${data[i].wheelchair_accessible}</li></ul>`,
     );
     markers.push(mapMarkers);
   }

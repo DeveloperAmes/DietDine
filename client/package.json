@@ -14,5 +14,10 @@
   "dependencies": {
     "@esri/arcgis-rest-request": "^4.7.3",
     "leaflet": "^1.9.4"
-  }
+  },
+  "description": "Project name: DietDine Render client link: https://diet-dine-client.onrender.com/ Render sever link: https://diet-dine-server.onrender.com/ GitHub repo link: https://github.com/rlefevre6505-mh/assignment-week5",
+  "main": "vite.config.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
