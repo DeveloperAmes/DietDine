@@ -178,7 +178,6 @@ main {
   z-index: 1;
   top: 0;
   right: 0;
-  transition: 0.7s;
   overflow-y: auto;
 }
 
@@ -199,9 +198,10 @@ main {
   position: fixed;
   padding: 0.5em;
   background-color: white;
-  right: 0;
+  right: 1px;
   z-index: 1;
   font-size: 20px;
+  border-radius: 5px;
 }
 
 .key_sidebar li {
@@ -209,6 +209,11 @@ main {
   display: flex;
   align-items: center;
   font-size: 0.8em;
+  border-bottom: solid 1px black;
+}
+
+.key_sidebar li:last-child {
+  border-bottom: none;
 }
 
 .key-icon {
