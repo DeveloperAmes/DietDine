@@ -32,7 +32,7 @@ app.post("/new-eateries", async (req, res) => {
   const newEateries = req.body.formValues;
   console.log(newEateries);
   const query = await db.query(
-    `INSERT INTO eateries (name, date_visited, location_lat, location_long, address, weblink, gluten_free, dairy_free, vegetarian, vegan, pescatarian, allergy_friendly, wheelchair_accessible) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13)`,
+    `INSERT INTO eateries (name, date_visited, location_lat, location_long, address, weblink, gluten_free, dairy_free, vegetarian, vegan, pescatarian, allergy_friendly, wheelchair_accessible, hidden_disability_friendly) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14)`,
     [
       newEateries.name,
       newEateries.date_visited,
@@ -47,14 +47,15 @@ app.post("/new-eateries", async (req, res) => {
       newEateries.pescatarian,
       newEateries.allergy_friendly,
       newEateries.wheelchair_accessible,
-    ]
+      newEateries.hidden_disability_friendly,
+    ],
   );
   res.json({ status: "success", values: newEateries });
 });
 
 app.get("/eateries", async function (request, response) {
   const query = await db.query(
-    `SELECT name, date_visited, location_lat, location_long, address, weblink, gluten_free, dairy_free, vegetarian, vegan, pescatarian, allergy_friendly, wheelchair_accessible FROM eateries; `
+    `SELECT name, date_visited, location_lat, location_long, address, weblink, gluten_free, dairy_free, vegetarian, vegan, pescatarian, allergy_friendly, wheelchair_accessible, hidden_disability_friendly FROM eateries; `,
   );
   console.log(query);
   response.json(query.rows);
@@ -64,7 +65,7 @@ app.get("/eateries", async function (request, response) {
 
 app.get("/dietary_requirements_submit", async (req, res) => {
   const query = await db.query(
-    `SELECT dietary_requirements FROM dietary_requirements_submit ORDER BY dietary_requirements;`
+    `SELECT dietary_requirements FROM dietary_requirements_submit ORDER BY dietary_requirements;`,
   );
   console.log(query.rows);
   res.json(query.rows);
@@ -100,7 +101,10 @@ app.get("/dieteateries", async (req, res) => {
   if (req.query.allergy_friendly === "true")
     condition.push("allergy_friendly = true");
   if (req.query.wheelchair_accessible === "true")
-    condition.push("wheelchair_accessible = true"); //if any of these conditions are true this will fill the empty array
+    condition.push("wheelchair_accessible = true");
+  if (req.query.hidden_disability_friendly === "true")
+    condition.push("hidden_disability_friendly = true");
+  //if any of these conditions are true this will fill the empty array
   if (condition.length > 0) {
     query += ` WHERE ` + condition.join(` AND `); //if more than one filter has been selected, this will join them, otherwise all eateries will be displayed
   }
