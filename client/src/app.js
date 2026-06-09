@@ -319,7 +319,7 @@ function createMapMarkers(data, map) {
     //   }
     // }
     mapMarkers.bindPopup(
-      `${data[i].name} <br>${data[i].address}<br><a href=${data[i].weblink} target="_blank">${data[i].weblink}</a><br><ul><li>Gluten free: ${data[i].gluten_free}</li><li>Dairy free: ${data[i].dairy_free}</li><li>Vegetarian: ${data[i].vegetarian}</li><li>Vegan: ${data[i].vegan}</li><li>Pescatarian: ${data[i].pescatarian}</li><li>Allergy friendly: ${data[i].allergy_friendly}</li><li>Wheelchair accessible: ${data[i].wheelchair_accessible}</li></ul><br>
+      `${data[i].name} <br>${data[i].address}<br><a href=${data[i].weblink} target="_blank">${data[i].weblink}</a><br><ul><li>Gluten free: ${data[i].gluten_free}</li><li>Dairy free: ${data[i].dairy_free}</li><li>Vegetarian: ${data[i].vegetarian}</li><li>Vegan: ${data[i].vegan}</li><li>Pescatarian: ${data[i].pescatarian}</li><li>Allergy friendly: ${data[i].allergy_friendly}</li><li>Wheelchair accessible: ${data[i].wheelchair_accessible}</li><li>Hidden disability friendly: ${data[i].hidden_disability_friendly}</li></ul><br>
       ${checkDietaryNeed(data[i])}`,
     );
     markers.push(mapMarkers);
