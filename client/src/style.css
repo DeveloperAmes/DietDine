@@ -11,7 +11,7 @@
   --primary-color-dark: #386641;
   --primary-color-medium: #6a994e;
   --primary-color-light: #a7c957;
-  --neutral-color-white: rgb(240, 255, 255);
+  --neutral-color-white: rgb(247, 247, 244);
   --secondary-color-light: #ffe76d;
   --secondary-color-extralight: #f0e5aa;
 }
@@ -153,6 +153,31 @@ main {
   height: 100%;
 }
 
+/* MAP MARKERS */
+
+.restaurant_name {
+  font-size: 1rem;
+  color: var(--primary-color-dark);
+}
+
+.restaurant_address {
+  color: var(--primary-color-dark);
+}
+
+.restaurant_weblink:link {
+  font-weight: bold;
+  color: var(--primary-color-dark);
+}
+
+.restaurant_weblink:visited {
+  color: var(--primary-color-medium);
+}
+
+.restaurant_weblink:hover,
+.restaurant_weblink:active {
+  color: var(--primary-color-light);
+}
+
 .diet-icon {
   margin: 0.4em;
   box-sizing: border-box;
@@ -179,6 +204,7 @@ main {
   top: 0;
   right: 0;
   overflow-y: auto;
+  color: var(--primary-color-dark);
 }
 
 .key_sidebar h2 {
@@ -196,12 +222,14 @@ main {
 
 .open_btn {
   position: fixed;
+  margin: 0.5em;
   padding: 0.5em;
   background-color: white;
   right: 1px;
   z-index: 1;
-  font-size: 20px;
   border-radius: 5px;
+  font-weight: bold;
+  color: var(--primary-color-dark);
 }
 
 .key_sidebar li {
@@ -240,7 +268,7 @@ main {
   background-color: rgba(6, 15, 11, 0.95);
   overflow-x: hidden;
   /* padding-top: 60px; */
-  transition: 0.5s;
+  transition: 0.7s;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -396,6 +424,7 @@ a {
 
 /* FOOTER STYLING  */
 footer {
+  padding: 0.6rem;
   grid-row: 3/4;
   grid-column: 1/-1;
   background-color: #264229;
@@ -404,6 +433,7 @@ footer {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+  text-align: center;
   /* font-family: Tahoma, sans-serif; */
 }
 
@@ -411,6 +441,7 @@ footer h3 {
   font-size: 1.2rem;
   font-weight: 200;
   color: var(--secondary-color-extralight);
+  margin: 0.5em 0;
 }
 
 .footer-links {
@@ -420,8 +451,11 @@ footer h3 {
   justify-content: space-evenly;
 }
 
-a {
+.footer-links a {
+  margin: 0 1em;
+  text-wrap: wrap;
   color: white;
+  font-size: 0.8em;
 }
 
 a:active {

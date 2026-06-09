@@ -335,7 +335,7 @@ function createMapMarkers(data, map) {
     //   }
     // }
     mapMarkers.bindPopup(
-      `${data[i].name} <br>${data[i].address}<br><a href=${data[i].weblink} target="_blank">${data[i].weblink}</a><br><br>
+      `<h3 class="restaurant_name">${data[i].name}</h3> <br><h4 class="restaurant_address">${data[i].address}</h4><br>For more information, check out their website: <a href=${data[i].weblink} target="_blank" class="restaurant_weblink">${data[i].weblink}</a><br><br>
       ${checkDietaryNeed(data[i])}`,
     );
     markers.push(mapMarkers);
