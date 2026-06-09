@@ -38,7 +38,7 @@ body {
   min-height: 35vh;
   max-height: 65vh;
   text-align: center;
-  background-color: rgb(15, 18, 16);
+  background-color: white;
   border: 5px solid var(--secondary-color-light);
   padding: 20px;
 }
