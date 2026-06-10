@@ -186,15 +186,20 @@ main {
   padding-top: 60px;
   padding-left: 20px;
   height: 100%;
-  display: none;
   width: 400px;
-  background-color: white;
+  background-color: var(--neutral-color-white);
   position: fixed;
   z-index: 1;
   top: 0;
   right: 0;
   overflow-y: auto;
   color: var(--primary-color-dark);
+  transform: translateX(100%);
+  transition: all 1s ease;
+}
+
+.key_sidebar.open {
+  transform: translateX(0);
 }
 
 .key_sidebar h2 {

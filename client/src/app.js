@@ -1,15 +1,15 @@
 console.log("Hello World");
 
 const openKeyBtn = document.querySelector(".open_btn");
+const closeKeyBtn = document.querySelector(".close_btn");
+const key = document.querySelector(".key_sidebar");
 
 openKeyBtn.addEventListener("click", function () {
-  document.getElementById("key_sidebar").style.display = "unset";
+  key.classList.add("open");
 });
 
-const closeKeyBtn = document.querySelector(".close_btn");
-
 closeKeyBtn.addEventListener("click", function () {
-  document.getElementById("key_sidebar").style.display = "none";
+  key.classList.remove("open");
 });
 
 let markers = []; //"suitcase" for created markers, to be put in when not in use and pulled back when needed with the filter
