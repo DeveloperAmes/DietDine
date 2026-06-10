@@ -22,7 +22,7 @@ let map; //used to be able to use the map later on for the filters/declared out 
 //Modal Button
 
 document.addEventListener("DOMContentLoaded", () => {
-  const modal = document.getElementById("myModal");
+  const modal = document.querySelector(".modal");
   const closeButton = document.getElementById("closeModal");
 
   modal.showModal();

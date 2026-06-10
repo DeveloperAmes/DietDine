@@ -11,7 +11,7 @@
   --primary-color-dark: #386641;
   --primary-color-medium: #6a994e;
   --primary-color-light: #a7c957;
-  --neutral-color-white: rgb(247, 247, 244);
+  --neutral-color-white: #f9f9f9;
   --secondary-color-light: #ffe76d;
   --secondary-color-extralight: #f0e5aa;
 }
@@ -23,49 +23,44 @@
 } */
 
 body {
-  height: 98vh;
+  height: 100vh;
   display: grid;
   grid-template-columns: 1;
   grid-template-rows: 2fr 7fr 1fr;
 }
 
-/* styling for duisclaimer */
-#myModal {
-  position: absolute;
-  left: 10vw;
-  top: 25vh;
+/* styling for disclaimer */
+.modal {
+  border: none;
+  margin: auto;
   width: 80vw;
-  min-height: 35vh;
-  max-height: 65vh;
+  max-width: 260px;
   text-align: center;
-  background-color: white;
-  border: 5px solid var(--secondary-color-light);
-  padding: 20px;
-}
-#myModal h2 {
-  font-size: 3rem;
-  color: var(--neutral-color-white);
-  margin-top: 20px;
-  margin-bottom: 10px;
-}
-
-#myModal p {
-  font-size: 1.2rem;
-  color: var(--secondary-color-extralight);
-  margin-bottom: 20px;
+  background-color: var(--neutral-color-white);
+  padding: 1.5em;
+  border-radius: 10px;
+  color: var(--primary-color-dark);
+  box-shadow: 5px 5px 10px #264229;
 }
 
 #closeModal {
-  padding: 10px;
-  /* min-height:;
-  min-width: ; */
-  color: var(--secondary-color-light);
-  /* border: solid 3px var(--secondary-color-medium); */
+  margin-top: 1em;
+  padding: 1em 1.5em;
+  color: var(--neutral-color-white);
   background-color: var(--primary-color-dark);
+  border-radius: 10px;
+  border: none;
+  font-weight: bold;
+}
+
+.modal h2,
+.modal p {
+  margin-bottom: 1em;
 }
 
 #closeModal:hover {
   cursor: pointer;
+  background-color: var(--primary-color-medium);
 }
 
 /* STYLING FOR HEADER SECTION */
@@ -123,10 +118,6 @@ h1 {
   grid-row: 1/2;
 }
 
-p {
-  font-size: 6vh;
-}
-
 /* nav {
   grid-row: 2/3;
   font-size: 0.8rem;
@@ -139,7 +130,6 @@ main {
   grid-row: 2/3;
   grid-column: 1/-1;
   background-color: var(--primary-color-medium);
-  border: 3px solid var(--primary-color-dark);
   position: relative;
   /* font-family: Tahoma, sans-serif; */
 }
