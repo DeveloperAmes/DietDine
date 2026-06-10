@@ -1,20 +1,16 @@
 console.log("Hello World");
 
-function openKey() {
-  document.getElementById("key_sidebar").style.display = "unset";
-}
-
-function closeKey() {
-  document.getElementById("key_sidebar").style.display = "none";
-}
-
 const openKeyBtn = document.querySelector(".open_btn");
 
-openKeyBtn.addEventListener("click", openKey);
+openKeyBtn.addEventListener("click", function () {
+  document.getElementById("key_sidebar").style.display = "unset";
+});
 
 const closeKeyBtn = document.querySelector(".close_btn");
 
-closeKeyBtn.addEventListener("click", closeKey);
+closeKeyBtn.addEventListener("click", function () {
+  document.getElementById("key_sidebar").style.display = "none";
+});
 
 let markers = []; //"suitcase" for created markers, to be put in when not in use and pulled back when needed with the filter
 let map; //used to be able to use the map later on for the filters/declared out of block scope/value assigned in createMap function
