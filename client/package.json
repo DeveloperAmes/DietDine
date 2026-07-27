@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "devDependencies": {
-    "vite": "^7.3.0"
+    "vite": "^8.1.5"
   },
   "dependencies": {
     "@esri/arcgis-rest-request": "^4.7.3",

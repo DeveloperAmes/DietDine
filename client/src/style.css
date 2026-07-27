@@ -206,7 +206,9 @@ main {
   margin-bottom: 0.5em;
 }
 
-.key_sidebar .close_btn {
+.key_sidebar .close_btn,
+.guide .close-guide-btn,
+.submit-visit .submit-visit-close-btn {
   position: absolute;
   top: 0;
   right: 10px;
@@ -249,31 +251,24 @@ main {
   border-radius: 10%;
 }
 
-/* STYLING FOR FILTERS POP-IN */
+/* STYLING FOR GUIDE & FILTERS POP-IN */
 
-.dropdown {
-  z-index: 1;
-  grid-row: 2/3;
-  height: 70%;
-  width: 0;
-  max-width: 380px;
+.guide {
+  box-sizing: border-box;
+  padding: 60px 20px 0 20px;
+  height: 100%;
+  width: 400px;
+  top: 0;
+  background-color: var(--neutral-color-white);
   position: fixed;
-  z-index: 3;
-  left: 0;
-  background-color: rgba(6, 15, 11, 0.95);
-  overflow-x: hidden;
-  /* padding-top: 60px; */
-  transition: 0.7s;
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
+  z-index: 1;
+  color: var(--primary-color-dark);
+  transform: translateX(-100%);
+  transition: all 1s ease;
 }
 
-.dropdown > h2 {
-  color: var(--neutral-color-white);
-  margin-top: 30px;
-  margin-right: 10px;
-  margin-left: 10px;
+.guide.open {
+  transform: translateX(0);
 }
 
 label {
@@ -287,16 +282,6 @@ select {
   max-width: 50%;
   margin-top: 10px;
   margin-left: 10px;
-}
-
-#dropdown h2 {
-  margin-left: 10px;
-  margin-top: 15px;
-  margin-bottom: 15x;
-  color: var(--secondary-color-extralight);
-  /* font-family: Tahoma, sans-serif; */
-  font-size: 1.4rem;
-  font-weight: 300;
 }
 
 select {
@@ -313,47 +298,24 @@ option:active {
   background-color: var(--secondary-color-light);
 }
 
-#dropdown-close-button {
-  position: absolute;
-  top: 5px;
-  right: 15px;
-  font-size: 36px;
-  /* margin-left: 50px; */
-  color: var(--secondary-color-extralight);
-}
-
 /* STYLING FOR FORM POP-IN */
 
-.popin {
-  grid-row: 2/3;
-  height: 70%;
-  width: 0;
+.submit-visit {
+  box-sizing: border-box;
+  padding: 60px 20px 0 20px;
+  height: 100%;
+  width: 400px;
+  top: 0;
+  background-color: var(--neutral-color-white);
   position: fixed;
-  z-index: 3;
-  left: 0;
-  background-color: rgba(6, 15, 11, 0.95);
-  overflow: auto;
-  transition: 0.5s;
-  border-radius: 3px;
-  /* font-family: Tahoma, sans-serif; */
-  font-size: 1rem;
+  z-index: 1;
+  color: var(--primary-color-dark);
+  transform: translateX(-100%);
+  transition: all 1s ease;
 }
 
-/* popin > .checkbox {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 
-  color: 
-  display: block;
-} */
-
-#popin-close-button {
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  font-size: 36px;
-  /* margin-left: 50px; */
-  color: var(--secondary-color-extralight);
+.submit-visit.open {
+  transform: translateX(0);
 }
 
 form {
@@ -401,8 +363,8 @@ form button {
 
 #popin-close-button:hover,
 #popin-button:hover,
-#dropdown-button:hover,
-#dropdown-close-button:hover,
+#guide-button:hover,
+#guide-close-button:hover,
 a {
   cursor: pointer;
 }

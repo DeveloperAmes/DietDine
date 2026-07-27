@@ -281,55 +281,7 @@ function createMapMarkers(data, map) {
       data[i].location_lat,
       data[i].location_long,
     ]).addTo(map);
-    // commented out as unable to implement adding icon images based on what dietary requirements each eatery caters for
-    // mapMarkers.bindPopup(createPopupElements(restaurantData));
-    // function createPopupElements(data) {
-    //   `${data[i].name} <br>${data[i].address}<br><a href=${data[i].weblink} target="_blank">${data[i].weblink}</a>`;
-    //   for (let i = 0; i < icons.length; i++) {
-    //     if (data[i].gluten_free === true) {
-    //       let glutenFreeIcon = document.createElement("img");
-    //       glutenFreeIcon.className = "diet-icon";
-    //       glutenFreeIcon.src = icons[0].iconSrc;
-    //       glutenFreeIcon.alt = icons[0].alt;
-    //     }
-    //     if (data[i].dairy_free === true) {
-    //       let dairyFreeIcon = document.createElement("img");
-    //       dairyFreeIcon.className = "diet-icon";
-    //       dairyFreeIcon.src = icons[1].iconSrc;
-    //       dairyFreeIcon.alt = icons[1].alt;
-    //     }
-    //     if (data[i].vegetarian === true) {
-    //       let vegetarianIcon = document.createElement("img");
-    //       vegetarianIcon.className = "diet-icon";
-    //       vegetarianIcon.src = icons[2].iconSrc;
-    //       vegetarianIcon.alt = icons[2].alt;
-    //     }
-    //     if (data[i].vegan === true) {
-    //       let veganIcon = document.createElement("img");
-    //       veganIcon.className = "diet-icon";
-    //       veganIcon.src = icons[3].iconSrc;
-    //       veganIcon.alt = icons[3].alt;
-    //       if (data[i].pescatarian === true) {
-    //         let pescatarianIcon = document.createElement("img");
-    //         pescatarianIcon.className = "diet-icon";
-    //         pescatarianIcon.src = icons[4].iconSrc;
-    //         pescatarianIcon.alt = icons[4].alt;
-    //       }
-    //       if (data[i].allergy_friendly === true) {
-    //         let allergyIcon = document.createElement("img");
-    //         allergyIcon.className = "diet-icon";
-    //         allergyIcon.src = icons[5].iconSrc;
-    //         allergyIcon.alt = icons[5].alt;
-    //       }
-    //       if (data[i].wheelchair_accessible === true) {
-    //         let wheelchairIcon = document.createElement("img");
-    //         wheelchairIcon.className = "diet-icon";
-    //         wheelchairIcon.src = icons[6].iconSrc;
-    //         wheelchairIcon.alt = icons[6].alt;
-    //       }
-    //     }
-    //   }
-    // }
+
     mapMarkers.bindPopup(
       `<h3 class="restaurant_name">${data[i].name}</h3> <br><h4 class="restaurant_address">${data[i].address}</h4><br>For more information, check out their website: <a href=${data[i].weblink} target="_blank" class="restaurant_weblink">${data[i].weblink}</a><br><br>
       ${checkDietaryNeed(data[i])}`,
@@ -338,60 +290,35 @@ function createMapMarkers(data, map) {
   }
 }
 
-// removed due to duplication
-// function createMapMarkers(data) {
-//   for (let i = 0; i < data.length; i++) {
-//     let markerCoords = [data[i].location_lat, data[i].location_long];
-//     let mapMarkers = L.marker(markerCoords).addTo(map);
-//   }
-// }
-
 // functions for side bar dropdown
 //Modal Button
 
-document.addEventListener("DOMContentLoaded", () => {
-  const modal = document.getElementById("myModal");
-  const closeButton = document.getElementById("closeModal");
-
-  modal.showModal();
-
-  closeButton.addEventListener("click", () => {
-    modal.close();
-  });
-});
-
 // functions for filter side bar
-const dropdownDiv = document.getElementById("dropdown");
-const dropdownButton = document.getElementById("dropdown-button");
-const dropdownCloseButton = document.getElementById("dropdown-close-button");
+const guide = document.querySelector(".guide");
+const openGuideBtn = document.querySelector(".open-guide-btn");
+const closeGuideBtn = document.querySelector(".close-guide-btn");
 
-dropdownButton.addEventListener("click", function () {
-  if (document.getElementById("popin").style.width != "0") {
-    document.getElementById("popin").style.width = "0";
-  }
-
-  document.getElementById("dropdown").style.width = "90vw";
+openGuideBtn.addEventListener("click", function () {
+  guide.classList.add("open");
 });
 
-dropdownCloseButton.addEventListener("click", function () {
-  document.getElementById("dropdown").style.width = "0";
+closeGuideBtn.addEventListener("click", function () {
+  guide.classList.remove("open");
 });
 
-// functions for form side bar
-const popInDiv = document.getElementById("popin");
-const popInButton = document.getElementById("popin-button");
-const popInCloseButton = document.getElementById("popin-close-button");
+// functions for submit a visit side bar
+const submitVisit = document.querySelector(".submit-visit");
+const submitVisitBtn = document.querySelector(".submit-visit-btn");
+const submitVisitCloseButton = document.querySelector(
+  ".submit-visit-close-btn",
+);
 
-popInButton.addEventListener("click", function () {
-  if (document.getElementById("dropdown").style.width != "0") {
-    document.getElementById("dropdown").style.width = "0";
-  }
-
-  document.getElementById("popin").style.width = "90vw";
+submitVisitBtn.addEventListener("click", function () {
+  submitVisit.classList.add("open");
 });
 
-popInCloseButton.addEventListener("click", function () {
-  document.getElementById("popin").style.width = "0";
+submitVisitCloseButton.addEventListener("click", function () {
+  submitVisit.classList.remove("open");
 });
 
 //code for date fomr validation - cannot add future dates
