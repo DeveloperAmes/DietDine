@@ -299,7 +299,7 @@ const openGuideBtn = document.querySelector(".open-guide-btn");
 const closeGuideBtn = document.querySelector(".close-guide-btn");
 
 openGuideBtn.addEventListener("click", function () {
-  guide.classList.add("open");
+  guide.classList.toggle("open");
 });
 
 closeGuideBtn.addEventListener("click", function () {
@@ -313,8 +313,25 @@ const submitVisitCloseButton = document.querySelector(
   ".submit-visit-close-btn",
 );
 
-submitVisitBtn.addEventListener("click", function () {
+const submitLink = document.querySelector(".guideSubmit");
+
+submitLink.addEventListener("click", function () {
   submitVisit.classList.add("open");
+});
+
+const iconsLink = document.querySelector(".guideIcons");
+
+iconsLink.addEventListener("click", function () {
+  key.classList.toggle("open");
+});
+
+// iconsLink.addEventListener("click", function () {
+
+//   }
+// });
+
+submitVisitBtn.addEventListener("click", function () {
+  submitVisit.classList.toggle("open");
 });
 
 submitVisitCloseButton.addEventListener("click", function () {

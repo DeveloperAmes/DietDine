@@ -40,7 +40,7 @@ body {
   padding: 1.5em;
   border-radius: 10px;
   color: var(--primary-color-dark);
-  box-shadow: 5px 5px 10px #264229;
+  box-shadow: 5px 5px 15px var(--primary-color-dark);
 }
 
 #closeModal {
@@ -179,7 +179,7 @@ main {
   color: white;
 }
 
-/* KEY SIDEBAR */
+/* ICONS KEY SIDEBAR */
 
 .key_sidebar {
   box-sizing: border-box;
@@ -189,7 +189,7 @@ main {
   width: 400px;
   background-color: var(--neutral-color-white);
   position: fixed;
-  z-index: 1;
+  z-index: 2;
   top: 0;
   right: 0;
   overflow-y: auto;
@@ -202,7 +202,9 @@ main {
   transform: translateX(0);
 }
 
-.key_sidebar h2 {
+.key_sidebar h2,
+.submit-visit h2,
+.guide h2 {
   margin-bottom: 0.5em;
 }
 
@@ -271,22 +273,15 @@ main {
   transform: translateX(0);
 }
 
-label {
-  color: var(--secondary-color-medium);
-  margin-top: 5px;
-  margin-left: 10px;
+.guide li {
+  padding: 0.5em 0.5em 0.5em 0;
+  list-style: none;
+  font-size: 0.8em;
+  border-bottom: solid 1px black;
 }
 
-select {
-  min-width: 40%;
-  max-width: 50%;
-  margin-top: 10px;
-  margin-left: 10px;
-}
-
-select {
-  background-color: var(--secondary-color-extralight);
-  color: var(--primary-color-dark);
+.filter_h2 {
+  padding-top: 60px;
 }
 
 option {
@@ -298,7 +293,7 @@ option:active {
   background-color: var(--secondary-color-light);
 }
 
-/* STYLING FOR FORM POP-IN */
+/* STYLING FOR FORM SUBMIT VISIT SIDEBAR */
 
 .submit-visit {
   box-sizing: border-box;
@@ -308,7 +303,8 @@ option:active {
   top: 0;
   background-color: var(--neutral-color-white);
   position: fixed;
-  z-index: 1;
+  z-index: 2;
+  overflow-y: auto;
   color: var(--primary-color-dark);
   transform: translateX(-100%);
   transition: all 1s ease;
@@ -318,37 +314,32 @@ option:active {
   transform: translateX(0);
 }
 
-form {
+.submit-visit h2 {
+  margin-bottom: 0.5em;
+}
+
+.submit-visit p {
+  font-size: 0.8em;
+}
+
+.submit-visit label {
+  margin-top: 1.5em;
+}
+
+.submit-visit form {
   display: flex;
   flex-direction: column;
-  max-width: 70vw;
-  margin-left: 10px;
-  color: var(--neutral-color-white);
-  /* font-family: Tahoma, sans-serif; */
+  color: var(--primary-color-dark);
   font-size: 0.8rem;
-  font-weight: 200;
+  font-weight: bold;
 }
 
 .hidden {
   display: none;
 }
 
-.postcode {
-  display: flex;
-  max-width: 70vw;
-}
-
-.accessible {
-  display: flex;
-}
-
 .tickbox {
-  margin-left: 15px;
   margin-right: 15px;
-}
-
-label {
-  margin-left: 20px;
 }
 
 textarea,
@@ -367,16 +358,6 @@ form button {
 #guide-close-button:hover,
 a {
   cursor: pointer;
-}
-
-.popin h2 {
-  margin-left: 10px;
-  margin-top: 15px;
-  margin-right: 20px;
-  color: var(--secondary-color-extralight);
-  /* font-family: Tahoma, sans-serif; */
-  font-size: 0.8rem;
-  font-weight: 300;
 }
 
 /* FOOTER STYLING  */

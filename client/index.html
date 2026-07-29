@@ -35,7 +35,7 @@
     </header>
     <main>
      <button class="open_btn">&#9776; Icons Key</button>
-      <div id="key_sidebar" class="key_sidebar">
+      <div class="key_sidebar">
         <button class="close_btn">&times; </button>
         <h2>Icons Key</h2>
         <ul>
@@ -66,9 +66,16 @@
         </ul>
       </div>
       <div class="guide">  <button class="close-guide-btn">&times; </button>
-        <h2>HOW TO:</br>Use the dropdown menu below to select one dietary option. This will filter out any restaurants on the map that do not meet your requirement. You can view which other requirements each restaurant meets by clicking on them in the map.
-        </h2>
-       <label for="filterS">Filter options:</label>
+        <h2>How to make the most of this app:</h2>
+          <ul>
+            <li>Use the <a class="guideIcons">icons key</a> to familiarise yourself with the symbols for each dietary requirement.</li>
+            <li>Use the dropdown menu below to view restaurants that meet a dietary requirement.
+              </li>
+              <li>Submit your own restaurant visit by clicking <a class="guideSubmit">this link</a> or the "Submit a visit" button on the homepage.</li>
+            </ul>
+
+        
+       <h2 class="filter_h2">Filter restaurants by dietary requirement</h2>
             <select name="filter" id="filter">
               <option value="" disabled selected>Select one</option>
           </select>
@@ -77,36 +84,31 @@
 
       
       <div class="submit-visit">  <button class="submit-visit-close-btn">&times; </button>    
-        <h2>BEFORE SUBMITTING YOUR RESTAURANT VISIT:</br>Please fill in all applicable details before clicking submit. Failure to complete all details will mean other users cannot see this information.</h2>
+        <h2>Add a Restaurant Visit</h2>
+        <p>Please fill in all applicable details before clicking submit.</p>
         <form id="form">     
-          <label for="name">Name of restaurant</label>
-  <input name="name" id="name" maxlength="100" required></textarea>
-          <label for="address">Address (not including postcode)</label>
-           <textarea name="address" id="address" maxlength="600" ></textarea>
-          <div class="postcode">  
-            <div><label for="postcode">Postcode</label>
-  <input name="postcode" id="postcode" maxlength="9" required></textarea></div>
-</div>
-
-<input value="" name="location_lat" class="hidden" id="lat-box" />
-<input value="" name="location_long" class="hidden" id="lon-box" />
-
-
-          <label for="weblink">Website</label>
-  <input type="url" name="weblink" id="weblink" maxlength="300" required></input>
-
-  <label for="date_visited">When did you visit the eatery?</label>
-  <input name="date_visited" id="date-setter" type="date" max="" required> </input>
-  <div class="accessible">
-  <label for="wheelchair_accessible">Was the location wheelchair accessible?</label>
-  <input type="checkbox" name="wheelchair_accessible" id="accessible" class="tickbox" />
-  </div>
-  <label for="choices">Which dietary restrictions are catered to?</label>
-  <div id="choices"></div>
-  <label for="comments">Any other comments</label>
-  <textarea name="comments" id="comments" maxlength="300" optional></textarea>
-  <button type="submit" id="submit-button">Submit</button>
-  </form>
+          <label for="name">Restaurant Name:</label>
+          <input name="name" id="name" maxlength="100" required/>
+          <label for="address">Address (not including postcode):</label>
+          <textarea name="address" id="address" maxlength="600" ></textarea>
+          <label for="postcode">Postcode:</label>
+          <input name="postcode" id="postcode" maxlength="9" required></textarea>
+          <input value="" name="location_lat" class="hidden" id="lat-box" />
+          <input value="" name="location_long" class="hidden" id="lon-box" />
+          <label for="weblink">Website:</label>
+          <input type="url" name="weblink" id="weblink" maxlength="300" required></input>
+          <label for="date_visited">When did you visit the eatery?</label>
+          <input name="date_visited" id="date-setter" type="date" max="" required> </input>
+          <label for="wheelchair_accessible">Was the location wheelchair accessible?</label>
+          <select>
+          <option value="True">Yes</option>
+          <option value="False">No</option>
+          </select>
+          <label for="choices">Which dietary restrictions are catered to?</label>
+          <label for="comments">Other Comments (optional):</label>
+          <textarea name="comments" id="comments" maxlength="300" optional></textarea>
+          <button type="submit" id="submit-button">Submit</button>
+          </form>
         </div>
 
 
