@@ -269,6 +269,8 @@ main {
   z-index: 1;
   transform: translateX(-100%);
   transition: all 1s ease;
+  overflow-y: auto;
+  scrollbar-color: black var(--neutral-color-white);
 }
 
 .guide.open {
@@ -276,7 +278,7 @@ main {
 }
 
 .guide li {
-  padding: 0.5em 0.5em 0.5em 0;
+  padding: 1.1em 0.5em 1.1em 0;
   list-style: none;
   font-size: 0.9em;
   border-bottom: solid 1px black;
@@ -285,6 +287,23 @@ main {
 
 .filter_h2 {
   padding-top: 60px;
+}
+
+.filter_checkboxes {
+  display: flex;
+  flex-direction: column;
+}
+
+.guide_filter_icons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.guideIcons,
+.guideSubmit {
+  font-weight: bold;
 }
 
 option {

@@ -68,17 +68,58 @@
       <div class="guide">  <button class="close-guide-btn">&times; </button>
         <h2 class="guide_h2">How to make the most of this app:</h2>
           <ul>
-            <li>Use the <a class="guideIcons">icons key</a> to familiarise yourself with the symbols for each dietary requirement.</li>
+            <li>Use the <a class="guideIcons">Icons Key</a> to familiarise yourself with the symbols for each dietary requirement.</li>
             <li>Use the dropdown menu below to view restaurants that meet a dietary requirement.
               </li>
               <li>Submit your own restaurant visit by clicking <a class="guideSubmit">this link</a> or the "Submit a visit" button on the homepage.</li>
             </ul>
 
         
-       <h2 class="filter_h2">Filter restaurants by dietary requirement</h2>
-            <select name="filter" id="filter">
-              <option value="" disabled selected>Select one</option>
-          </select>
+       <h2 class="filter_h2">Filter restaurants by dietary and accessibility requirements</h2>
+       <legend>Choose as many as you like:</legend>
+       <div class="filter_checkboxes">
+        <div class="guide_filter_icons">
+       <input type="checkbox" id="gluten_free" name="gluten_free"/>
+       <label for="gluten_free">Gluten free</label>
+       <img src="/icons/glutenfree.png" alt="An orange cartoon outline of  strand of wheat inside a circle. The words 'gluten free' surround the strand of wheat." class="key-icon"/>
+       </div>
+       <div class="guide_filter_icons">
+       <input type="checkbox" id="dairy_free" name="dairy_free"/>
+       <label for="dairy_free">Dairy free</label>
+       <img src="/icons/dairyfree.png" alt="A white cartoon outline of a milk carton. The words 'dairy free' surround the milk carton." class="key-icon"/>
+       </div>
+       <div class="guide_filter_icons">
+       <input type="checkbox" id="vegetarian" name="vegetarian"/>
+       <label for="vegetarian">Vegetarian</label>
+       <img src="/icons/vegetarian.png" alt="A green cartoon outline of a carrot. The word 'vegetarian' surrounds the green carrot." class="key-icon"/>
+       </div>
+       <div class="guide_filter_icons">
+       <input type="checkbox" id="vegan" name="vegan"/>
+       <label for="vegan">Vegan</label>
+       <img src="/icons/vegan.png" alt="A yellow cartoon outline of a carrot. The word 'vegan' surrounds the yellow carrot." class="key-icon"/>
+       </div>
+       <div class="guide_filter_icons">
+       <input type="checkbox" id="pescatarian" name="pescatarian"/>
+       <label for="pescatarian">Pescatarian</label>
+       <img src="/icons/fish.png" alt="A light blue cartoon outline of a fish." class="key-icon"/>
+       </div>
+       <div class="guide_filter_icons">
+       <input type="checkbox" id="allergy_friendly" name="allergy_friendly"/>
+       <label for="allergy_friendly">Allergy friendly</label>
+       <img src="/icons/allergens.png" alt="A purple cartoon outline of soybeans." class="key-icon"/>
+       </div>
+       <div class="guide_filter_icons">
+       <input type="checkbox" id="wheelchair_accessible" name="wheelchair_accessible"/>
+       <label for="wheelchair_accessible">Wheelchair accessible</label>
+       <img src="/icons/wheelchair.png" alt="A pink wheelchair icon." class="key-icon"/>
+       </div>
+       <div class="guide_filter_icons">
+       <input type="checkbox" id="hidden_disablity_friendly" name="hidden_disablity_friendly"/>
+       <label for="hidden_disablity_friendly">Hidden disability friendly</label>
+       <img src="/icons/sunflower.png" alt="A yellow cartoon sunflower inside a green circle." class="key-icon"/>
+       </div>
+       <button>Apply filters</button>
+       </div>
 
       </div>
 
