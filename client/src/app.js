@@ -107,14 +107,15 @@ searchForm.addEventListener("submit", function (event) {
 
 //function to populate requirements into the  dropdown filter
 
-async function filterReq() {
+const filterBtn = document.querySelector(".filter_btn");
+
+filterBtn.addEventListener("click", async function () {
   const res = await fetch(
-    "https://diet-dine-server.onrender.com/dietary_requirements_submit", //change to render link once setup
+    "https://diet-dine-server.onrender.com/dietary_requirements_submit",
   );
   const list = await res.json();
-  // console.log("Dietary Requirements:", list);
+  console.log(list);
 
-  const dietList = document.getElementById("filter");
   list.forEach((choices) => {
     // const label = document.createElement("label");
     // label.style.display = "block"; //underneath each other - can be changed later if there are issues with CSS
@@ -130,11 +131,9 @@ async function filterReq() {
     //to have checkbox before text
     // label.prepend(checkbox);
 
-    dietList.appendChild(option);
+    reqList.appendChild(option);
   });
-}
-
-filterReq();
+});
 
 const getUserLocation = (position) => {
   const userLat = position.coords.latitude;
