@@ -35,7 +35,7 @@ console.log(form);
 
 async function DietReq() {
   const res = await fetch(
-    "https://diet-dine-server.onrender.com/dietary_requirements_submit", //change to render link once setup
+    "https://dietdine-server.onrender.com/dietary_requirements_submit", //change to render link once setup
   );
   const list = await res.json();
   console.log("Dietary Requirements:", list);
@@ -89,7 +89,7 @@ async function completeSubmit() {
   const formDataTemplate = new FormData(form);
   const formValues = Object.fromEntries(formDataTemplate);
   console.log(formValues);
-  fetch("https://diet-dine-server.onrender.com/new-eateries", {
+  fetch("https://dietdine-server.onrender.com/new-eateries", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -111,7 +111,7 @@ const filterBtn = document.querySelector(".filter_btn");
 
 filterBtn.addEventListener("click", async function () {
   const res = await fetch(
-    "https://diet-dine-server.onrender.com/dietary_requirements_submit",
+    "https://dietdine-server.onrender.com/dietary_requirements_submit",
   );
   const list = await res.json();
   console.log(list);
@@ -185,9 +185,7 @@ function createMap(getUserLocation) {
 // }).addTo(map);
 
 async function getRestaurantData() {
-  const response = await fetch(
-    "https://diet-dine-server.onrender.com/eateries",
-  );
+  const response = await fetch("https://dietdine-server.onrender.com/eateries");
   const restaurantData = await response.json();
   return restaurantData;
 }
@@ -354,7 +352,7 @@ const filterForm = document.getElementById("filter");
 filterForm.addEventListener("change", async (event) => {
   const selection = event.target.value; //target property, in this case which dietary requirement
 
-  let url = "https://diet-dine-server.onrender.com/dieteateries";
+  let url = "https://dietdine-server.onrender.com/dieteateries";
   if (selection) {
     url += `?${selection}=true`;
   }
