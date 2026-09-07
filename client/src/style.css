@@ -7,7 +7,27 @@
 }
 
 /* CSS COLOUR VARIABLES: */
+/* colours from the Okable-Ito palette:
+
+Black (#000000)
+
+Orange (#E69F00)
+
+Sky Blue (#56B4E9)
+
+Bluish Green (#009E73)
+
+Yellow (#F0E442)
+
+Blue (#0072B2)
+
+Vermillion (#D55E00)
+
+Reddish Purple (#CC79A7)*/
+
 :root {
+  --logo-green: #009e73;
+  --logo-orange: #e69f00;
   --primary-color-dark: #386641;
   --primary-color-medium: #6a994e;
   --primary-color-light: #a7c957;
