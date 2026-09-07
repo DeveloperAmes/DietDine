@@ -68,10 +68,7 @@ footer {
 
 /* STYLING FOR HEADER SECTION */
 header {
-  grid-row: 1/2;
-  grid-column: 1/-1;
-  background-color: #264229;
-  border: 3px solid var(--primary-color-dark);
+  background-color: var(--primary-color-dark);
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -116,9 +113,7 @@ header {
 }
 
 h1 {
-  margin-top: 10px;
-  font-size: 6vh;
-  grid-row: 1/2;
+  margin-top: 3%;
 }
 
 /* nav {
