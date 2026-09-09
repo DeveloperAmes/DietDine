@@ -1,9 +1,14 @@
+@font-face {
+  font-family: "Bahnschrift";
+  src: url(/client/public/fonts/BAHNSCHRIFT.TTF);
+}
+
 /* RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Tahoma, sans-serif;
+  font-family: "Bahnschrift", sans-serif;
 }
 
 /* CSS COLOUR VARIABLES: */
@@ -28,12 +33,11 @@ Reddish Purple (#CC79A7)*/
 :root {
   --logo-green: #009e73;
   --logo-orange: #e69f00;
-  --primary-color-dark: #386641;
-  --primary-color-medium: #6a994e;
-  --primary-color-light: #a7c957;
+  --logo-grey: #696969;
+  --darker-green: #00805e;
+  --darker-orange: #db7500;
+  --darker-grey: #545454;
   --neutral-color-white: #f9f9f9;
-  --secondary-color-light: #ffe76d;
-  --secondary-color-extralight: #f0e5aa;
 }
 
 /* .container {
@@ -46,12 +50,6 @@ body {
   height: 100vh;
 }
 
-footer {
-  position: absolute;
-  bottom: 0;
-  width: 100vw;
-}
-
 /* styling for disclaimer */
 .modal {
   border: none;
@@ -62,15 +60,15 @@ footer {
   background-color: var(--neutral-color-white);
   padding: 1.5em;
   border-radius: 10px;
-  color: var(--primary-color-dark);
-  box-shadow: 5px 5px 15px var(--primary-color-dark);
+  color: var(--darker-grey);
+  box-shadow: 5px 5px 15px var(--logo-grey);
 }
 
 #closeModal {
   margin-top: 1em;
   padding: 1em 1.5em;
   color: var(--neutral-color-white);
-  background-color: var(--primary-color-dark);
+  background-color: var(--darker-green);
   border-radius: 10px;
   border: none;
   font-weight: bold;
@@ -83,16 +81,21 @@ footer {
 
 #closeModal:hover {
   cursor: pointer;
-  background-color: var(--primary-color-medium);
+  background-color: var(--darker-orange);
 }
 
 /* STYLING FOR HEADER SECTION */
 header {
-  background-color: var(--primary-color-dark);
+  background-color: var(--neutral-color-white);
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  color: white;
+  color: var(--darker-grey);
+  border-bottom: var(--logo-green) 2px solid;
+}
+
+.header-span {
+  color: var(--logo-green);
 }
 
 .header-items {
@@ -125,11 +128,6 @@ header {
 
 .logo {
   height: 18vh;
-}
-
-.header-text {
-  display: flex;
-  flex-direction: column;
 }
 
 h1 {
@@ -403,23 +401,23 @@ a {
 
 /* FOOTER STYLING  */
 footer {
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
   padding: 0.6rem;
-  grid-row: 3/4;
-  grid-column: 1/-1;
-  background-color: #264229;
-  border: 3px solid var(--primary-color-dark);
+  background-color: var(--neutral-color-white);
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
   text-align: center;
-  /* font-family: Tahoma, sans-serif; */
+  border-top: var(--logo-green) solid 2px;
 }
 
 footer h3 {
   font-size: 1.2rem;
   font-weight: 200;
-  color: var(--secondary-color-extralight);
+  color: var(--logo-green);
   margin: 0.5em 0;
 }
 
@@ -433,12 +431,13 @@ footer h3 {
 .footer-links a {
   margin: 0 1em;
   text-wrap: wrap;
-  color: white;
+  color: var(--logo-green);
   font-size: 0.8em;
 }
 
-a:active {
-  color: var(--primary-color-light);
+.footer-links:active,
+.footer-links:hover {
+  color: var(--logo-orange);
 }
 
 /* @media (width < 600px) {
