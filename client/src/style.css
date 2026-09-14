@@ -478,7 +478,7 @@ footer h3 {
   }
 }
 
-@media (min-width: 500px) {
+@media (min-width: 590px) {
   header h1 {
     margin-right: 20px;
     text-wrap: wrap;
@@ -497,7 +497,7 @@ footer h3 {
   }
 }
 
-@media (min-width: 700px) {
+@media (min-width: 780px) {
   header h1 {
     font-size: 1.5em;
   }
@@ -507,6 +507,17 @@ footer h3 {
   .header-text-btns-div {
     justify-content: space-between;
     flex-grow: 1;
+  }
+}
+
+@media (min-width: 970px) {
+  header h1 {
+    font-size: 2em;
+  }
+  .header-nav button {
+    font-size: 1em;
+    max-width: 150px;
+    padding: 0.5em 1em;
   }
 }
 /* @media (width < 600px) {
