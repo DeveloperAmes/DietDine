@@ -151,6 +151,42 @@ main {
   width: auto;
 }
 
+main p {
+  color: var(--darker-grey);
+}
+
+.loading-container {
+  position: absolute;
+  top: 25%;
+  left: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.loading-container p {
+  font-size: 1.5em;
+  margin-left: 15px;
+}
+
+.spinner {
+  width: 64px;
+  height: 64px;
+  border: 8px solid;
+  border-color: var(--logo-green) transparent var(--logo-green) transparent;
+  border-radius: 50%;
+  animation: spin-anim 1.2s linear infinite;
+}
+
+@keyframes spin-anim {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 #map {
   z-index: 0;
   position: absolute;
